@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
                 <title>Nikolas Fugate's Website</title>
     <style>
   body {
-    background-color: #f5f2eb;
-    color: #222;
+    background-color: #1C1324;
+    color: #fff;
     font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
     line-height: 1.6;
     min-height: 100vh;
     margin: 0;
-    padding: clamp(1rem, 4vw, 2rem);
+    padding: 0 clamp(1rem, 4vw, 2rem) clamp(1rem, 4vw, 2rem);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -23,11 +24,21 @@ p {
   h1 {
     text-align: center;
     font-size: clamp(1.75rem, 5vw, 3rem);
+    margin: 0 0 0.25rem;
+  }
+
+  h1 + p {
+    margin-top: 0;
   }
 
   h2 {
     text-align: center;
     font-size: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .about p {
+    font-size: 1rem;
+    text-align: left;
   }
 
 hr {
@@ -46,18 +57,114 @@ hr {
 nav {
     text-align: center;
 }
+
+a {
+    color: inherit;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+    gap: clamp(1.5rem, 5vw, 4rem);
+    width: min(100%, 70rem);
+    margin: 0 auto;
+}
+
+.profile-details {
+    display: grid;
+    gap: 1.5rem;
+    min-width: 0;
+}
+
+.portrait {
+    margin: 0;
+}
+
+.about h2 {
+    margin: 0 0 0.5rem;
+    text-align: left;
+}
+
+.portrait img {
+    display: block;
+    width: 100%;
+    max-height: 38rem;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+}
+
+.links h2 {
+    margin: 0 0 0.5rem;
+    text-align: left;
+}
+
+.links nav {
+    display: grid;
+    gap: 1.25rem;
+    text-align: left;
+}
+
+.links nav a {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 600;
+}
+
+.links nav p {
+    margin: 0.25rem 0 0;
+    text-align: left;
+}
+
+@media (max-width: 700px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portrait img {
+        max-height: 28rem;
+    }
+}
 </style>
     </head>
   <body>
             <h1>Nikolas Fugate</h1>
-            <p>Philosophy B.A. & Infantryman</p>
             <hr>
-            <h2>Links</h2>
-  <nav aria-label="Links">
-    <a href="https://www.linkedin.com/in/nikolasfugate/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a href="https://github.com/NikolasFugate" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="https://hypsodenios.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>
-  </nav>
+            <main class="content-grid">
+                <figure class="portrait">
+                    <img src="headshot.jpg" alt="Portrait of Nikolas Fugate">
+                    <p>Me!</p>
+                </figure>
+                <div class="profile-details">
+                    <section class="about" aria-labelledby="about-heading">
+                        <h2 id="about-heading">About Me</h2>
+                        <p>Hello! I'm a Philosophy B.A. and an Infantryman from the United States. This page serves as a
+                            way for me to keep all my projects and socials in one place that I actually own.
+                            Please utilize the links below to access my various platforms and projects.
+                            Thank you for visiting my page!
+                        </p>
+                    </section>
+                    <section class="links" aria-labelledby="links-heading">
+                        <h2 id="links-heading">Links</h2>
+                        <nav aria-label="Links">
+                            <div>
+                                <a href="https://www.linkedin.com/in/nikolasfugate/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                <p>Connect with me and learn more about my professional experience.</p>
+                            </div>
+                            <div>
+                                <a href="https://github.com/NikolasFugate" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                <p>Explore my code and projects.</p>
+                            </div>
+                            <div>
+                                <a href="https://hypsodenios.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>
+                                <p>Read my essays and other writing. I run two SubStack publications: Pensive Musings (Philosophy)
+                                    and Discordant Tones (Music).</p>
+                            </div>
+                        </nav>
+                    </section>
+                </div>
+            </main>
                 <footer>
                     <hr>
                     Est. 2026 | <a href="mailto:nikolas.fugate@gmail.com">nikolas.fugate@gmail.com</a>
